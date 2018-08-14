@@ -2,7 +2,7 @@
     <div class="nav-bar">
     <ul class="nav-pages">
         <li class="nav-page" v-on:click="redirect('calculette')">Calculette</li>
-        <li class="nav-page" v-on:click="redirect('théorème')">Théorème</li>        
+        <li class="nav-page" v-on:click="redirect('quizz')">Quizz</li>        
         <li class="nav-page" v-on:click="redirect('equation')">Equation</li>
     </ul>
         <img class="nav-icone" src="../assets/butters.png" v-on:click="redirect('/')">
