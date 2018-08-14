@@ -1,8 +1,8 @@
 <template>
     <div class="alert alert-success text-center">
-        <h1>That's Correct!</h1>
+        <h1>C'est Juste!</h1>
         <hr>
-        <button class="btn btn-primary" @click="onNextQuestion">Next Question</button>
+        <button class="btn btn-primary" @click="onNextQuestion">Pochaine Question</button>
     </div>
 </template>
 <style>
