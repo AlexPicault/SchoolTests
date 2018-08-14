@@ -5,16 +5,16 @@
         </div>
         <div class="panel-body">
             <div class="col-xs-12 col-sm-6 text-center">
-                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[0].correct)">{{ btnData[0].answer }}</button>
+                <button class="btn btn-lg" :class="btnData[0].class" style="margin: 10px" @click="onAnswer(btnData[0].correct, 0)">{{ btnData[0].answer }}</button>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
-                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[1].correct)">{{ btnData[1].answer }}</button>
+                <button class="btn btn-lg" :class="btnData[1].class" style="margin: 10px" @click="onAnswer(btnData[1].correct, 1)">{{ btnData[1].answer }}</button>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
-                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[2].correct)">{{ btnData[2].answer }}</button>
+                <button class="btn btn-lg" :class="btnData[2].class" style="margin: 10px" @click="onAnswer(btnData[2].correct, 2)">{{ btnData[2].answer }}</button>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
-                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[3].correct)">{{ btnData[3].answer }}</button>
+                <button class="btn btn-lg" :class="btnData[3].class" style="margin: 10px" @click="onAnswer(btnData[3].correct, 3)">{{ btnData[3].answer }}</button>
             </div>
         </div>
     </div>
@@ -30,10 +30,10 @@
             return {
                 question: 'Oops, an error ocurred :/',
                 btnData: [
-                    {correct: true, answer: 0},
-                    {correct: false, answer: 0},
-                    {correct: false, answer: 0},
-                    {correct: false, answer: 0}
+                    {correct: true, answer: 0, class : "btn-primary"},
+                    {correct: false, answer: 0, class : "btn-primary"},
+                    {correct: false, answer: 0, class : "btn-primary"},
+                    {correct: false, answer: 0, class : "btn-primary"}
                 ]
             };
         },
@@ -74,13 +74,15 @@
             },
             generateRandomNumber(min, max, except) {
                 const rndNumber = Math.round(Math.random() * (max - min)) + min;
-                console.log(min, max, rndNumber);
                 if (rndNumber == except) {
                     return this.generateRandomNumber(min, max, except);
                 }
                 return rndNumber;
             },
-            onAnswer(isCorrect) {
+            onAnswer(isCorrect, index) {
+                if(isCorrect === false){
+                    this.btnData[index].class = "btn-danger"; 
+                   }
                 this.$emit('answered', isCorrect);
             }
         },

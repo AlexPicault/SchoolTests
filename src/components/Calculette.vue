@@ -113,7 +113,6 @@ export default {
 	
   //set answer parameters (squareColor, step, try)
   setAnswer(answer) {
-			this.$modal.show('end-game');		
     this.answer = answer.value;
     if (this.answer === this.currentOp.result) {
       this.setSquareColor(answer, true);
