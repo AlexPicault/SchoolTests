@@ -48,11 +48,11 @@
                 switch (modeNumber) {
                     case MODE_ADDITION:
                         correctAnswer = firstNumber + secondNumber;
-                        this.question = `What's ${firstNumber} + ${secondNumber}?`;
+                        this.question = `${firstNumber} + ${secondNumber}?`;
                         break;
                     case MODE_SUBTRACTION:
                         correctAnswer = firstNumber - secondNumber;
-                        this.question = `What's ${firstNumber} - ${secondNumber}?`;
+                        this.question = `${firstNumber} - ${secondNumber}?`;
                         break;
                     default:
                         correctAnswer = 0;
