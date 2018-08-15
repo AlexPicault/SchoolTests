@@ -2,9 +2,9 @@
 <div>
     <div class="nav-bar">
     <ul class="nav-pages">
-        <li class="nav-page" v-on:click="redirect('calculette')">Calculette</li>
-        <li class="nav-page" v-on:click="redirect('quizz')">Quizz</li>        
-        <li class="nav-page" v-on:click="redirect('stickers')">Etiquettes</li>
+        <li class="nav-page"><router-link to="/calculette">Calculette</router-link></li>
+          <li class="nav-page"><router-link to="/quizz">Quizz</router-link></li>
+            <li class="nav-page"><router-link to="/stickers">Etiquettes</router-link></li>
     </ul>
         <img class="nav-icone" src="../assets/butters.png" v-on:click="redirect('/')">
     </div>
@@ -16,12 +16,6 @@ export default {
         return {
         }
     },
-
-    methods : {
-        redirect(page){
-            this.$router.push(page);
-        },
-    }
 }
 </script>
 <style scoped>
